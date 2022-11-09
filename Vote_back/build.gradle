@@ -14,6 +14,11 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
+    // Enrace: FISCO-BCOS 官方依赖包
+    implementation 'org.fisco-bcos.java-sdk:fisco-bcos-java-sdk:2.9.1'
+    // Enrace: Hutool 工具包
+    implementation 'cn.hutool:hutool-all:5.8.7'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
