@@ -16,14 +16,14 @@
 
 * [ ] 创建 solidity 智能合约所实现的功能
 
-  | 服务             | URL       | 变量      |
-  | ---------------- | --------- | --------- |
-  | 用户登录         | /login    | account   |
-  | 用户注册         | /register | account   |
-  | 创建投票项目     | /creater  |           |
-  | 投票             | /poll     | memeber   |
-  | 关闭项目         | /close    | projectId |
-  | 查看自身所有项目 | /myself   |           |
+  | 服务             | URL       | 参数               |
+  | ---------------- | --------- | ------------------ |
+  | 用户登录         | /login    | account            |
+  | 用户注册         | /register | account            |
+  | 创建投票项目     | /creater  | projectName,passwd |
+  | 投票             | /poll     | memeber,passwd     |
+  | 关闭项目         | /close    | projectId,passwd   |
+  | 查看自身所有项目 | /myself   |                    |
 
 * [ ] 完成用户登录的 Service 创建
 
