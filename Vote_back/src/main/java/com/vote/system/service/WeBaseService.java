@@ -21,20 +21,33 @@ public class WeBaseService {
 
     public static final String ABI = IOUtil.readResourceAsString("com/vote/system/abi/Vote.abi");
 
-    public static String userAddress = "";
-
     public Dict haveAccount(String account) {
-        userAddress = account;
-
         List funcParam = new ArrayList();
         funcParam.add(account);
-        Dict result = commonReq(userAddress,"haveAccount",funcParam);
+        Dict result = commonReq(account,"haveAccount",funcParam);
+        String now = (String)result.get("result");
+        return result;
+    }
+
+    public Dict signAccount(String account) {
+        List funcParam = new ArrayList();
+        funcParam.add(account);
+        Dict result = commonReq(account,"signAccount",funcParam);
+        String now = (String)result.get("result");
         return result;
     }
 
     public Dict getAllproject(String account) {
         List funcParam = new ArrayList();
         Dict result = commonReq(account,"getAllproject",funcParam);
+        return result;
+    }
+
+    public Dict sginProject(String account,String projectName,String password) {
+        List funcParam = new ArrayList();
+        funcParam.add(projectName);
+        funcParam.add(password);
+        Dict result = commonReq(account,"sginProject",funcParam);
         return result;
     }
 

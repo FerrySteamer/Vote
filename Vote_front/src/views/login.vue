@@ -24,6 +24,8 @@
 </template>
 
 <script>
+import 'axios'
+
 export default {
   name: "Login",
   data() {
@@ -37,27 +39,26 @@ export default {
   },
   methods: {
     login () {
-      this.$axios
-        .post('/login', {
-          loginName: this.loginForm.loginName,
-          password: this.loginForm.password
-        })
-        .then(successResponse => {
-          if (successResponse.data.code === 200) {
-            this.$router.replace({path: '/'})
-          }
-        })
-        .catch(failResponse => {
-        })
-    }
+      this.$axios.post('/login', {
+            loginName: this.loginForm.loginName,
+          })
+          .then(successResponse => {
+            if (successResponse.data.code === 200) {
+              this.$router.replace({path: '/'})
+            }
+          })
+          .catch(failResponse => {
+          })
+      }
   },
 };
 </script>
 
 <style scoped>
 #login-page {
-  background: url("../assets/chonghang.jpg") no-repeat;
-  background-position: center;
+  /* background: url("../assets/chonghang.jpg") no-repeat;
+  /* background-position: center; */
+  /* background:fixed;  */
   margin-left: 7%;
   height: 90%;
   width: 85%;
